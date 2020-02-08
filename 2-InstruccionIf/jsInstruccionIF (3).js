@@ -10,7 +10,7 @@ if(edad >= 18)
         alert("Sos mayor de edad");
 
 }
-if(edad <=17)
+else
 {
     alert("Sos menor de edad");
 }
