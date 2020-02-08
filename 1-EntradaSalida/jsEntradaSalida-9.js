@@ -12,7 +12,7 @@ function mostrarAumento()
 
     resultado = sueldo *1.1 ;
 
-    document.getElementById("resultado").value = resultado;
+    document.getElementById("resultado").value = resultado.toFixed(2);
 
     
 	
