@@ -3,28 +3,39 @@ function mostrar()
     var notas;
     var sexo;
     var promedio;
-    var contador = 0;
     var acumulador=0;
     var flag = 0;
-    var contadorm;
+    var contadorm=0;
+    var sexobajo;
 
-    for(var x=0; x< 5; contador++){
-        notas = parseInt(prompt("Ingrese la nota del 1 al 10"));
-        sexo = prompt("Ingrese el sexo f o m");
-        acumulador = acumulador + notas;
-
+    for(var x=0; x < 5; x++){
+        notas = parseInt(prompt("Ingrese nota del 1 al 10"));
+        while(notas <1 || notas > 10 || isNaN(notas)){
+            notas = parseInt(prompt("Nota inválida.Ingrese nota del 1 al 10"));
         }
+        sexo = prompt("Ingrese el sexo f o m");
+        while(!(sexo=="f" || sexo=="m")){
+            sexo = prompt("Sexo inválido. Ingrese f o m");
+        }
+        acumulador = acumulador + notas;
+        
         if (flag == 0 || notas > max) {
-			max = notas;
+            max = notas;
+            sexo = sexo;
 		}
 		if (flag == 0 || notas < min) {
-			min = notas;
+            min = notas;
+            sexobajo = sexo;
 			flag = 1;			
         }
-        if(notas = "m"){
+        if(notas >= 6 && sexo == "m"){
             contadorm++;
-        }
-
+        }}
+        promedio = acumulador / 5;
+        
+        alert("El promedio de notas es : " + promedio + "\n" +
+        "La nota más baja es : " + min + " y su sexo es : " + sexobajo + "\n" + 
+        "La cantidad de varones con nota mayor o igual a seis es : " + contadorm);
     }
 
 
